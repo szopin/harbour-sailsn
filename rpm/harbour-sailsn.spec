@@ -9,7 +9,7 @@ Name:       harbour-sailsn
 # << macros
 
 Summary:    SailSN
-Version:    1.1
+Version:    1.2
 Release:    1
 Group:      Qt/Qt
 License:    MIT
@@ -18,8 +18,8 @@ URL:        http://example.org/
 Source0:    %{name}-%{version}.tar.bz2
 Source100:  harbour-sailsn.yaml
 Requires:   sailfishsilica-qt5 >= 0.10.9
-Requires:   qt5-qtdeclarative-import-xmllistmodel
 Requires:   libsailfishapp-launcher
+Requires:   qt5-qtdeclarative-import-xmllistmodel
 BuildRequires:  pkgconfig(sailfishapp) >= 1.0.3
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Qml)
@@ -27,7 +27,7 @@ BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  desktop-file-utils
 
 %description
-Simple browser for SoylentNews
+Short description of my Sailfish OS Application
 
 
 %prep

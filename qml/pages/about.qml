@@ -34,6 +34,7 @@ Page {
             Label {
                 id: appName
                 text: "SailSN"
+                anchors.top: appIcon.bottom
                 anchors.horizontalCenter: parent.horizontalCenter
                 font.family: Theme.fontFamily
                 font.pixelSize: Theme.fontSizeLarge
@@ -51,7 +52,7 @@ Page {
                 font.pixelSize: Theme.fontSizeExtraSmall
                 color: Theme.primaryColor
                 wrapMode: Text.Wrap
-                text: "SoylentNews browser for Sailfish OS v1.1\nBy szopin\nLicensed under MIT";
+                text: "SoylentNews browser for Sailfish OS v1.2\nBy szopin\nLicensed under MIT";
             }
             
             Button {

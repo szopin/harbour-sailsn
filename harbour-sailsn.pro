@@ -20,6 +20,7 @@ DISTFILES += qml/harbour-sailsn.qml \
     qml/pages/FirstPage.qml \
     qml/pages/SecondPage.qml \
     qml/pages/webview.qml \
+    qml/img/harbour-sailsn.png \
     rpm/harbour-sailsn.changes.in \
     rpm/harbour-sailsn.changes.run.in \
     rpm/harbour-sailsn.spec \
