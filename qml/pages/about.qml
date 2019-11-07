@@ -21,7 +21,14 @@ Page {
             }
             height: parent.height
             color: "transparent"
+            Image {
+                id: appIcon
+                fillMode: Image.PreserveAspectFit
+                smooth: true
+                source: "../img/harbour-sailsn.png"
+                anchors.horizontalCenter: parent.horizontalCenter
 
+            }
             
             
             Label {
