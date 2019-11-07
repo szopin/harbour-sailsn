@@ -12,7 +12,7 @@ import QtQuick.XmlListModel 2.0
         ViewPlaceholder {
             id: vplaceholder
             enabled: feedModel.status != XmlListModel.Ready
-            text: "Loading"
+            text: "Loading..."
             ProgressBar {
                 anchors.top: vplaceholder.bottom
                 width: parent.width
