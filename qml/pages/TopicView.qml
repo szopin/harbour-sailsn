@@ -32,12 +32,7 @@ import Sailfish.Silica 1.0
             id: vplaceholder
             enabled: model.count == 0
             text: "Loading..."
-        /*    ProgressBar {
-                anchors.top: vplaceholder.bottom
-                width: parent.width
-                value: feedModel.progress
 
-            } */
         }
 
        header: PageHeader {
@@ -54,14 +49,14 @@ import Sailfish.Silica 1.0
 
             MenuItem {
                 text: "Browse by topic"
-            onClicked: pageStack.push("TopicSelect.qml");
-                //topic = "2"
+                onClicked: pageStack.push("TopicSelect.qml");
+
             }
         }
 
         VerticalScrollDecorator {}
         model: ListModel { id: model}
-       // delegate: Text { text: title }
+
         Component.onCompleted: {
             var xhr = new XMLHttpRequest;
             xhr.open("GET", combined);
@@ -82,7 +77,7 @@ import Sailfish.Silica 1.0
           delegate: Item {
             width: parent.width
             height: Theme.itemSizeMedium
-           // visible: xhr.readyState === XMLHttpRequest.DONE
+
             anchors  {
 
                 left: parent.left

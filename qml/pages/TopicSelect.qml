@@ -12,12 +12,7 @@ import Sailfish.Silica 1.0
             id: vplaceholder
             enabled: model.count == 0
             text: "Loading..."
-        /*    ProgressBar {
-                anchors.top: vplaceholder.bottom
-                width: parent.width
-                value: feedModel.progress
 
-            } */
         }
 
        header: PageHeader {
@@ -52,7 +47,7 @@ import Sailfish.Silica 1.0
           delegate: Item {
             width: parent.width
             height: Theme.itemSizeMedium
-           // visible: searchable == "yes" ? 1 : 0
+
             anchors  {
 
                 left: parent.left
