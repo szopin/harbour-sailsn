@@ -5,6 +5,7 @@ Page {
     id: secondpage
     allowedOrientations: Orientation.All
     property string content
+    property string intro
     property string url
     property string snTitle
 
@@ -32,7 +33,7 @@ Page {
         anchors.top: pageHeader.bottom
             id: column
             Label {
-                text: content
+                text: content == intro ? content : intro + content
                 font.pixelSize: Theme.fontSizeSmall
                 linkColor: Theme.highlightColor
                 wrapMode: Text.Wrap

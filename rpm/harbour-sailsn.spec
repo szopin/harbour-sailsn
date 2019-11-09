@@ -9,7 +9,7 @@ Name:       harbour-sailsn
 # << macros
 
 Summary:    SailSN
-Version:    1.2
+Version:    1.4
 Release:    1
 Group:      Qt/Qt
 License:    MIT
@@ -19,7 +19,6 @@ Source0:    %{name}-%{version}.tar.bz2
 Source100:  harbour-sailsn.yaml
 Requires:   sailfishsilica-qt5 >= 0.10.9
 Requires:   libsailfishapp-launcher
-Requires:   qt5-qtdeclarative-import-xmllistmodel
 BuildRequires:  pkgconfig(sailfishapp) >= 1.0.3
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Qml)
