@@ -10,16 +10,18 @@ import Sailfish.Silica 1.0
         property string textname
         property string pagetitle: textname == "" ? "SoylentNews" : "SoylentNews - " + textname
         property string combined: tid == "" ? source + topic : source + tid
-        onCombinedChanged: {
+
+
+        function updatetopic(){
             var xhr = new XMLHttpRequest;
             xhr.open("GET", combined);
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === XMLHttpRequest.DONE) {
                     var data = JSON.parse(xhr.responseText);
-                    model.clear();
+                    list.model.clear();
 
                     for (var i=0;i<50;i++) {
-                        model.append({title: data[i]["title"], intro: data[i]["introtext"], description: data[i]["bodytext"], link: "https://soylentnews.org/article.pl?sid=" + data[i]["sid"]});
+                        list.model.append({title: data[i]["title"], intro: data[i]["introtext"], description: data[i]["bodytext"], link: "https://soylentnews.org/article.pl?sid=" + data[i]["sid"]});
                     }
                 }
             }
@@ -46,6 +48,13 @@ import Sailfish.Silica 1.0
                 text: "About"
                 onClicked: pageStack.push("about.qml");
             }
+            MenuItem {
+                text: "Reload"
+                onClicked: {
+                    list.model.clear()
+                    topicPage.updatetopic()
+                }
+            }
 
             MenuItem {
                 text: "Browse by topic"
@@ -57,21 +66,7 @@ import Sailfish.Silica 1.0
         VerticalScrollDecorator {}
         model: ListModel { id: model}
 
-        Component.onCompleted: {
-            var xhr = new XMLHttpRequest;
-            xhr.open("GET", combined);
-            xhr.onreadystatechange = function() {
-                if (xhr.readyState === XMLHttpRequest.DONE) {
-                    var data = JSON.parse(xhr.responseText);
-                    model.clear();
-
-                    for (var i=0;i<50;i++) {
-                        model.append({title: data[i]["title"], intro: data[i]["introtext"], description: data[i]["bodytext"], link: "https://soylentnews.org/article.pl?sid=" + data[i]["sid"]});
-                    }
-                }
-            }
-            xhr.send();
-        }
+        Component.onCompleted: topicPage.updatetopic();
 
 
           delegate: Item {

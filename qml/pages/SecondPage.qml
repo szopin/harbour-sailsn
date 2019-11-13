@@ -36,6 +36,7 @@ Page {
                 text: content == intro ? content : intro + content
                 font.pixelSize: Theme.fontSizeSmall
                 linkColor: Theme.highlightColor
+                onLinkActivated: Qt.openUrlExternally(link)
                 wrapMode: Text.Wrap
                 anchors {
                             left: parent.left

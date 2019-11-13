@@ -52,7 +52,7 @@ Page {
                 font.pixelSize: Theme.fontSizeExtraSmall
                 color: Theme.primaryColor
                 wrapMode: Text.Wrap
-                text: "SoylentNews browser for Sailfish OS v1.4\nBy szopin\nLicensed under MIT";
+                text: "SoylentNews browser for Sailfish OS v1.4.1\nBy szopin\nLicensed under MIT";
             }
             
             Button {
