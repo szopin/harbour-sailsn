@@ -8,9 +8,11 @@ Page {
     property string intro
     property string url
     property string snTitle
+    property int commentcount
+    property string discussion
 
     SilicaFlickable {
-        contentHeight: column.height
+        contentHeight: column.height + pageHeader.height
         anchors.fill: parent
         PageHeader {
             id: pageHeader
@@ -27,6 +29,12 @@ Page {
                 onClicked: pageStack.push("webview.qml", {"pageurl": url });
 
             }
+            MenuItem {
+                text: "Comments (" + commentcount + ")"
+                visible: commentcount > 0
+                onClicked: pageStack.push("CommentView.qml", {"discussion": discussion, "snTitle": snTitle });
+
+            }
         }
     Column {
         width: parent.width
@@ -36,7 +44,9 @@ Page {
                 text: content == intro ? content : intro + content
                 font.pixelSize: Theme.fontSizeSmall
                 linkColor: Theme.highlightColor
-                onLinkActivated: Qt.openUrlExternally(link)
+                onLinkActivated: {
+                    var dialog = pageStack.push("OpenLinkDialog.qml", {link: link});
+                }
                 wrapMode: Text.Wrap
                 anchors {
                             left: parent.left

@@ -21,7 +21,7 @@ import Sailfish.Silica 1.0
                     list.model.clear();
 
                     for (var i=0;i<50;i++) {
-                        list.model.append({title: data[i]["title"], intro: data[i]["introtext"], description: data[i]["bodytext"], link: "https://soylentnews.org/article.pl?sid=" + data[i]["sid"]});
+                        list.model.append({title: data[i]["title"], intro: data[i]["introtext"], description: data[i]["bodytext"], link: "https://soylentnews.org/article.pl?sid=" + data[i]["sid"], discussion: data[i]["discussion"], commentcount: data[i]["commentcount"]});
                     }
                 }
             }
@@ -95,7 +95,7 @@ import Sailfish.Silica 1.0
                 anchors.fill: parent
                 onClicked: {
                     var name = list.model.get(index).name
-                        pageStack.push("SecondPage.qml", {"content": description, "intro": intro, "url": link, "snTitle": title });
+                        pageStack.push("SecondPage.qml", {"content": description, "intro": intro, "url": link, "snTitle": title, "discussion": discussion, "commentcount": commentcount });
 
                     }
                 }

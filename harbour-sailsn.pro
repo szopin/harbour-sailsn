@@ -17,6 +17,8 @@ CONFIG += sailfishapp_qml
 DISTFILES += qml/harbour-sailsn.qml \
     LICENSE \
     qml/cover/CoverPage.qml \
+    qml/pages/CommentView.qml \
+    qml/pages/OpenLinkDialog.qml \
     qml/pages/SecondPage.qml \
     qml/pages/TopicSelect.qml \
     qml/pages/TopicView.qml \
